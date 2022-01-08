@@ -1,10 +1,10 @@
 package camibank;
 
 public class Conta {
-	String titular = "Ainda não foi informado o nome do titular da conta";
 	double saldo;
 	int numero;
 	int agencia;
+	Cliente titular;
 
 	public void deposita(double valor) {
 		this.saldo += valor;
