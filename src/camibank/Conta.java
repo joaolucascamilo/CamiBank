@@ -1,13 +1,15 @@
 package camibank;
 
 public class Conta {
-	double saldo;
-	int numero;
-	int agencia;
-	Cliente titular;
+	private double saldo;
+	private int numero;
+	private int agencia;
+	private Cliente titular;
 
 	public void deposita(double valor) {
-		this.saldo += valor;
+		if (valor > 0) {
+			this.saldo += valor;
+		}
 	}
 
 	public boolean saca(double valor) {
@@ -25,5 +27,33 @@ public class Conta {
 			return true;
 		}
 		return false;
+	}
+
+	public double getSaldo() {
+		return this.saldo;
+	}
+
+	public int getNumero() {
+		return this.numero;
+	}
+
+	public void setNumero(int numero) {
+		this.numero = numero;
+	}
+
+	public int getAgencia() {
+		return this.agencia;
+	}
+
+	public void setAgencia(int agencia) {
+		this.agencia = agencia;
+	}
+
+	public Cliente getTitular() {
+		return this.titular;
+	}
+
+	public void setTitular(Cliente titular) {
+		this.titular = titular;
 	}
 }

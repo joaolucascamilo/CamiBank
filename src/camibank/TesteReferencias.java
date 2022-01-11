@@ -3,14 +3,14 @@ package camibank;
 public class TesteReferencias {
 	public static void main(String[] args) {
 		Conta primeiraConta = new Conta();
-		primeiraConta.saldo = 100;
-		System.out.println(primeiraConta.saldo); 
+		primeiraConta.deposita(100);
+		System.out.println(primeiraConta.getSaldo()); 
 		
 		Conta segundaConta = primeiraConta;
-		segundaConta.saldo += 700;
+		segundaConta.deposita(700);
 		
-		System.out.println(primeiraConta.saldo); 
-		System.out.println(segundaConta.saldo); 
+		System.out.println(primeiraConta.getSaldo()); 
+		System.out.println(segundaConta.getSaldo()); 
 		 
 		if(primeiraConta == segundaConta) { 
 			System.out.println("São iguais");
