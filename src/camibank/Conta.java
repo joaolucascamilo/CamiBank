@@ -5,6 +5,17 @@ public class Conta {
 	private int numero;
 	private int agencia;
 	private Cliente titular;
+	private static int total;
+	
+	public Conta(int numero, int agencia) {
+		total++; //Sempre que uma instancia da classe Conta for iniciada, será adicionado +1 ao total
+		if(numero <= 0 || agencia <=0) {
+			System.err.println("Número e agência não podem ser menor ou igual a 0");
+			return;
+		}
+		this.numero = numero;
+		this.agencia = agencia;
+	}
 
 	public void deposita(double valor) {
 		if (valor > 0) {
@@ -37,16 +48,8 @@ public class Conta {
 		return this.numero;
 	}
 
-	public void setNumero(int numero) {
-		this.numero = numero;
-	}
-
 	public int getAgencia() {
 		return this.agencia;
-	}
-
-	public void setAgencia(int agencia) {
-		this.agencia = agencia;
 	}
 
 	public Cliente getTitular() {
@@ -55,5 +58,9 @@ public class Conta {
 
 	public void setTitular(Cliente titular) {
 		this.titular = titular;
+	}
+	
+	public static int getTotal() {
+		return Conta.total;
 	}
 }
