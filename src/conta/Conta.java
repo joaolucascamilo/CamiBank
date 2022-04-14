@@ -1,7 +1,7 @@
-package camibank;
+package conta;
 
-public class Conta {
-	private double saldo;
+public abstract class Conta {
+	protected double saldo;
 	private int numero;
 	private int agencia;
 	private Cliente titular;
@@ -15,19 +15,17 @@ public class Conta {
 		}
 		this.numero = numero;
 		this.agencia = agencia;
+		System.out.println("Estou criando uma nova conta " + this.numero);
 	}
 
-	public void deposita(double valor) {
-		if (valor > 0) {
-			this.saldo += valor;
-		}
-	}
+	public abstract void deposita(double valor);
 
 	public boolean saca(double valor) {
 		if (this.saldo >= valor) {
 			this.saldo -= valor;
 			return true;
 		}
+		System.err.println("SALDO INSUFICIENTE, NÃO FOI POSSÍVEL REALIZAR O SAQUE.");
 		return false;
 	}
 
@@ -37,6 +35,7 @@ public class Conta {
 			contaDestino.deposita(valor);
 			return true;
 		}
+		System.err.println("SALDO INSUFICIENTE, NÃO FOI POSSÍVEL REALIZAR A TRANSFERÊNCIA.");
 		return false;
 	}
 

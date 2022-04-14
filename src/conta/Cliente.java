@@ -1,4 +1,4 @@
-package camibank;
+package conta;
 
 public class Cliente {
 	private String nome;
