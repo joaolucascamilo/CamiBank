@@ -1,4 +1,4 @@
-package camibank;
+package Entities;
 
 public abstract class Funcionario {
 	private String nome;

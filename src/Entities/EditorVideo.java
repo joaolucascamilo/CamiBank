@@ -1,4 +1,4 @@
-package camibank;
+package Entities;
 
 public class EditorVideo extends Funcionario {
 	

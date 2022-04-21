@@ -1,5 +1,7 @@
 package conta;
 
+import Entities.Cliente;
+
 public abstract class Conta {
 	protected double saldo;
 	private int numero;
